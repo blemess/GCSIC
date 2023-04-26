@@ -1,0 +1,22 @@
+name : Aula de GCS
+
+on: push
+
+defaults:
+  run:
+    shell: bash
+    
+jobs:
+  primeiro:
+    runs-on: ubuntu-latest 
+    steps:
+       -  name: Mostrar rodando
+          run: echo teste
+  segundo:
+    runs-on: windows-latest
+    steps:
+      - name: Mostrar rodando
+        env:
+          VAR1: Isto é
+          VAR2: GCSIC Actions
+        run: echo $VAR1 $VAR2
